@@ -12,24 +12,6 @@ int main(int argc, char *argv[])
         check = argv[1][0] - '0';
     }
     
-    if (check == 4 || check == 0)
-    {
-        int i = 0;
-        int n = 4;
-        char strbzero[10] = "123456789";
-        char strbzero_1[10] = "123456789";
-        printf("AVANT : %s.\n", strbzero);
-        bzero(strbzero, n);
-        ft_bzero(strbzero_1, n);
-        while (i < 10)
-        {
-            printf("bzero / ft_bzero : %c / %c\n", strbzero[i], strbzero_1[i]);
-            i++;
-        }
-
-    }
-    
-
 
     /* TEST DE MEMSET */
     if (check == 1 || check == 0)
