@@ -9,7 +9,8 @@
 /*   Updated: 2022/09/17 12:34:15 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_rush02.h"
+#include <stdlib.h>
+#include "ft_strlen.c"
 
 char	*ft_strdup(char *src)
 {
