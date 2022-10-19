@@ -10,6 +10,6 @@ int     ft_strncmp(char *s1, char *s2, unsigned int n);
 int     ft_strlen(char *str);
 void    ft_bzero(void *s, size_t n);
 void    *ft_memcpy(void *dst, const void *src, size_t n);
-
+void    *ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 #endif

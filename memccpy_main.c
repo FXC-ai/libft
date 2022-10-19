@@ -24,30 +24,15 @@ int main(int argc, char *argv[])
     int c = atoi(argv[3]);
 
     void *result = memccpy(cpy_dst, argv[2], c, atoi(argv[4]));
+    void *result1 = ft_memccpy(cpy_dst_1, argv[2], c, atoi(argv[4]));
 
-    printf("APRES : %s\n", cpy_dst);
-    printf("result = %p\n", result);
-
+    char *resultcp = (char *) result;
+    char *resultcp1 = (char *) result1;
+    
+    printf("memccpy    : %s\n", cpy_dst);
+    printf("ft_memccpy : %s\n", cpy_dst_1);
+    printf("result memccpy    = %c\n", *resultcp);
+    printf("result ft_memccpy = %c\n", *resultcp1);
 
     return 0;
 }
-/*
-int main() {
-
-    const char * text = "Ceci se. Etnde";
-    size_t length = strlen( text );
-
-    // On essaye de trouver la première phrase dans le texte.
-    char firstSentence[26] = "abcdefghijklmnopqrstuvwxyz";
-    char *res = memccpy(firstSentence, text, '.', length);
-
-    // On affiche le resultat.
-    if ( res != NULL ) {
-        printf( "Une phrase entière a été trouvée.\n" );
-        printf( "\t%s\n", firstSentence );
-    } else {
-        printf( "Aucune phrase entière trouvée.\n" );
-    }
-
-    return EXIT_SUCCESS;
-}*/
