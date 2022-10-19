@@ -1,6 +1,6 @@
 HEADIR = includes
 
-SRCS 	= srcs/ft_bzero.c srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strncmp.c srcs/ft_atoi.c srcs/ft_memset.c srcs/ft_split.c srcs/ft_strdup.c srcs/ft_strjoin.c
+SRCS 	= srcs/ft_bzero.c srcs/ft_memcpy.c srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strncmp.c srcs/ft_atoi.c srcs/ft_memset.c srcs/ft_split.c srcs/ft_strdup.c srcs/ft_strjoin.c
 
 OBJS	= ${SRCS:.c=.o}
 
