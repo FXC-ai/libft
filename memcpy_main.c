@@ -1,14 +1,13 @@
 #include "includes/ft.h"
 #include <libc.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
-    (void) argv;
+
     if (argc != 4)
     {
-        printf("void *memcpy(void *restrict dst, const void *restrict src, size_t n);\n");
+        printf("void *ft_memcpy(void *dst, const void *src, size_t n)");
         return 1;
     }
 
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
     memcpy(dst1, argv[1], size_dst);
 
 
-    printf("src = %s, n = %s\n", src, argv[3]);
+    printf("src = %s \n", src);
     printf("AVANT dst = %s\n", dst);
 
     memcpy(dst, src, atoi(argv[3]));
