@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft.h                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:49:57 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/10/24 17:33:34 by fcoindre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
+
 
 #include <stdio.h>
 #include <string.h>
@@ -18,5 +31,7 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n);
 int     ft_isalpha(int c);
 int     ft_isdigit(int c);
 int     ft_isalnum(int c);
+int     ft_isprint(int c);
+int     ft_toupper(int c);
 
 #endif
