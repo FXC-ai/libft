@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:49:57 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/24 17:33:34 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:02:42 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int     ft_isdigit(int c);
 int     ft_isalnum(int c);
 int     ft_isprint(int c);
 int     ft_toupper(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 #endif
