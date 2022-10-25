@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 11:54:38 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/25 18:04:30 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/10/25 18:04:38 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/10/25 19:46:59 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t			i;
-	int				r;
+	char	*a;
+	size_t	i;
+	size_t	c;
 
 	i = 0;
-	while (i < n)
+	c = 0;
+	if (needle[0] == '\0')
+		return ((char *) haystack);
+	while (i < len && haystack[i] != '\0')
 	{
-		if (s1[i] == '\0')
+		if (haystack[i] == needle[0])
+			a = (char*) &haystack[i];
+		c = 0;
+		while (needle[c] == haystack[i + c] && (i + c) < len)
 		{
-			r = (unsigned char) s1[i] - (unsigned char) s2[i];
-			return (r);
-		}
-		if (s2[i] == '\0')
-		{
-			r = (unsigned char) s1[i] - (unsigned char) s2[i];
-			return (r);
-		}
-		if (s1[i] != s2[i])
-		{
-			r = (unsigned char) s1[i] - (unsigned char) s2[i];
-			return (r);
+			if (needle[c + 1] == '\0')
+				return (a);
+			c++;
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
