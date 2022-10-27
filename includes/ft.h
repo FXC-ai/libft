@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:49:57 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/25 20:28:17 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/10/27 11:47:31 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int     ft_tolower(int c);
+size_t  ft_strlcat(char *dest, const char *src, size_t size);
 
 #endif
