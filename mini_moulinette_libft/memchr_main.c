@@ -17,6 +17,8 @@ int main(int argc, char const *argv[])
     void *result = memchr(s, c, n);
     void *result1 = ft_memchr(s, c, n);
 
+    
+
     printf("   memchr : result = %p\n", result);
     printf("ft_memchr : result = %p\n", result1);
 
