@@ -2,5 +2,5 @@
 *.out
 *.o
 *.out
-.vscode
+/.vscode
 /a.out.dSYM/Contents

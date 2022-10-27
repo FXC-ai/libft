@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int     ft_atoi(char *str);
+int     ft_atoi(const char *str);
 void    *ft_memset(void *b, int c, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *str);

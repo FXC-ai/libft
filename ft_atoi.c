@@ -6,15 +6,15 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:53:00 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:26:00 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_isspace(char a);
-int	ft_space_min_finder(char *str, int *is_negativ);
-int	ft_atoi(char *str);
+int	ft_space_min_finder(const char *str, int *is_negativ);
+int	ft_atoi(const char *str);
 
 int	ft_isspace(char a)
 {
@@ -30,7 +30,7 @@ int	ft_isspace(char a)
 	return (0);
 }
 
-int	ft_space_min_finder(char *str, int *is_negativ)
+int	ft_space_min_finder(const char *str, int *is_negativ)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ int	ft_space_min_finder(char *str, int *is_negativ)
 	{
 		i++;
 	}
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 		{
@@ -50,7 +50,7 @@ int	ft_space_min_finder(char *str, int *is_negativ)
 	return (i);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	is_negativ;
@@ -66,7 +66,7 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	i--;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (i != -1 && (str[i] >= '0' && str[i] <= '9'))
 	{
 		result += (str[i] - 48) * multiplier;
 		multiplier *= 10;
@@ -74,3 +74,5 @@ int	ft_atoi(char *str)
 	}
 	return (result * is_negativ);
 }
+
+
