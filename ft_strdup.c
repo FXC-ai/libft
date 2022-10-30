@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:29:30 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/30 09:47:17 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:21:34 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 	size_t	s1_size;
 
 	s1_size = ft_strlen(s1);
-	s1_dup = malloc((s1_size + 1) * sizeof(*s1));
+	s1_dup = malloc((s1_size + 1) * sizeof(char));
 	if (s1_dup == NULL)
 		return (NULL);
 	i = 0;

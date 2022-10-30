@@ -1,54 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr_dep2.c                                   :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 16:57:21 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/30 17:34:53 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/10/30 09:57:09 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/10/30 16:40:34 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	size_t			i;
+	size_t	len_s;
+	size_t	len_to_cpy;
+	char	*result;
+	size_t	i;
 
-	str = NULL;
-	if (start > ft_strlen(s))
+	len_s = ft_strlen(s);
+	len_to_cpy = 0;
+
+	if (start > len_s)
+		start = len_s;
+
+    if (len >= (len_s - start))
 	{
-		len = 0;
+        len_to_cpy = (len_s - start) + 1;
+	}
+	else if (len < (len_s - start))
+	{
+		len_to_cpy = len + 1;
 	}
 
-    if (len == SIZE_MAX)
-    {
-        len = SIZE_MAX - 1;
-    }
-    if (ft_strlen(s) - start > len)
-	{
-		str = malloc(sizeof(char) * (len + 1));
-	}
-	else
-	{
-		str = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
-
-	}
-	if (str == NULL)
+	result = malloc(sizeof(char) * len_to_cpy);
+	if (result == NULL)
 		return (NULL);
+	
 	i = 0;
-	while (i < len && start + i < ft_strlen(s))
+	while (i < len_to_cpy)
 	{
-		str[i] = s[start + i];
+		result[i] = s[i + start];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	
+	result[i] = '\0';
+
+
+	return (result);
 }
-/*
+
 #include <stdio.h>
 
 int main()
@@ -64,4 +68,4 @@ int main()
 
 	return 0;
 
-}*/
+}
