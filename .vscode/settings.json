@@ -30,6 +30,7 @@
   ],
   "C_Cpp.errorSquiggles": "Disabled",
   "files.associations": {
-    "ft.h": "c"
+    "ft.h": "c",
+    "fcntl.h": "c"
   }
 }
