@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr_dep2.c                                   :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:57:21 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/30 17:34:53 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/10/30 17:38:43 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	}
 
-    if (len == SIZE_MAX)
-    {
-        len = SIZE_MAX - 1;
-    }
     if (ft_strlen(s) - start > len)
 	{
 		str = malloc(sizeof(char) * (len + 1));
