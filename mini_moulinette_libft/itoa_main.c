@@ -3,6 +3,11 @@
 
 int main ()
 {
+
+	char* r = ft_itoa(0);
+	printf("r = %s\n", r);
+
+
 	int test[9];
 
 	test[0] = -0;

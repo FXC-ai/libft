@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/07 11:40:05 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:07:20 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,6 @@ char	**ft_split(char *str, char c)
 	tab = malloc(sizeof(char *) * (word_count + 1));
 	if (tab == NULL)
 		return (NULL);
-	/*
-	if (word_count == 1)
-	{
-		return (tab[0] = NULL);
-	}*/
 
 	h = 0;
 	i = 0;
@@ -105,18 +100,17 @@ char	**ft_split(char *str, char c)
 		}
 		i ++;
 	}
-	tab[h] = 0;
+	tab[h] = NULL;
 	return (tab);
 }
 
-/*
+
 #include <stdio.h>
 
 int main()
 {
 
-
-	char **tab = ft_split("hello!", ' ');
+	char **tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
 	
 	int i = 0;
 
@@ -127,8 +121,10 @@ int main()
 		i++;
 	}
 
+	printf("tab[%d] = \"%s\"\n", i, tab[i]);
+
 	free(tab);
 
 	return (0);
 
-}*/
+}
