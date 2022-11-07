@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/07 12:07:20 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:56:23 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,28 +73,42 @@ static char	*ft_cpy_word(int i, int size_word, char *str)
 	return (word);
 }
 
+static void	ft_free_tabs(char **tab, int h)
+{
+	int	i;
+
+	i = 0;
+	while (i <= h)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 char	**ft_split(char *str, char c)
 {
 	int		h;
 	int		i;
 	char	**tab;
 	int		size_word;
-	int		word_count;
 
-	word_count = ft_word_count(str, c);
-
-	tab = malloc(sizeof(char *) * (word_count + 1));
+	tab = malloc(sizeof(char *) * (ft_word_count(str, c) + 1));
 	if (tab == NULL)
 		return (NULL);
-
 	h = 0;
 	i = 0;
-	while (h < word_count)
+	while (h < ft_word_count(str, c))
 	{
 		size_word = ft_size_word(i, str, c);
 		if (size_word > 0)
 		{	
 			tab[h] = ft_cpy_word(i, size_word, str);
+			if (tab[h] == NULL)
+			{
+				ft_free_tabs(tab, h);
+				return (NULL);
+			}
 			i += size_word;
 			h++;
 		}
@@ -104,7 +118,7 @@ char	**ft_split(char *str, char c)
 	return (tab);
 }
 
-
+/*
 #include <stdio.h>
 
 int main()
@@ -127,4 +141,4 @@ int main()
 
 	return (0);
 
-}
+}*/
