@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:47:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/07 15:56:23 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:31:34 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,54 +91,26 @@ char	**ft_split(char *str, char c)
 	int		h;
 	int		i;
 	char	**tab;
-	int		size_word;
 
 	tab = malloc(sizeof(char *) * (ft_word_count(str, c) + 1));
 	if (tab == NULL)
 		return (NULL);
 	h = 0;
-	i = 0;
+	i = -1;
 	while (h < ft_word_count(str, c))
 	{
-		size_word = ft_size_word(i, str, c);
-		if (size_word > 0)
+		if (ft_size_word(++i, str, c) > 0)
 		{	
-			tab[h] = ft_cpy_word(i, size_word, str);
+			tab[h] = ft_cpy_word(i, ft_size_word(i, str, c), str);
 			if (tab[h] == NULL)
 			{
 				ft_free_tabs(tab, h);
 				return (NULL);
 			}
-			i += size_word;
+			i += ft_size_word(i, str, c);
 			h++;
 		}
-		i ++;
 	}
 	tab[h] = NULL;
 	return (tab);
 }
-
-/*
-#include <stdio.h>
-
-int main()
-{
-
-	char **tab = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-	
-	int i = 0;
-
-	while (tab[i] != 0)
-	{
-		printf("tab[%d] = \"%s\"\n", i, tab[i]);
-		free(tab[i]);
-		i++;
-	}
-
-	printf("tab[%d] = \"%s\"\n", i, tab[i]);
-
-	free(tab);
-
-	return (0);
-
-}*/
