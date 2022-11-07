@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 17:22:19 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:20:45 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char	cc;
-
-	cc = (unsigned char) c;
-	if (cc >= 'a' && cc <= 'z')
+	if (c >= 'a' && c <= 'z')
 	{
-		return (cc - 32);
+		return (c - 32);
 	}
-	return (cc);
+	return (c);
 }

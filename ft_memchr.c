@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:08:20 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:52:03 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    void *result;
-    unsigned char cc = c;
-    char *ps = (char *) s;
+    unsigned char *cs = (unsigned char *) s;
+    unsigned char cc = (unsigned char) c;
 
-    result = NULL;
     size_t i;
     i = 0;
     while (i < n)
     {
-        if (ps[i] == cc)
+        if (cs[i] == cc)
         {
             return ((void *) &s[i]);
         }
         i++;
     }
-    return (result);
+    return (NULL);
 }

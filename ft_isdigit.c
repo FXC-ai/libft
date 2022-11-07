@@ -6,20 +6,13 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 12:07:32 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:21:03 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    unsigned char cc;
-    
-    cc = (unsigned char) c;
-	if (cc >= '0' && cc <= '9')
-	{
-		return (1);
-	}
-	return (0);
+	return (c >= '0' && c <= '9');
 }
