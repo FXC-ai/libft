@@ -6,16 +6,13 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:47:10 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/08 11:47:17 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:08:38 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (fd > 2)
-	{
-		write(fd, &c, 1);
-	}
+	write(fd, &c, 1);
 }
