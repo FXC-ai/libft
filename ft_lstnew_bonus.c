@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 14:09:34 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/08 16:52:39 by fcoindre         ###   ########.fr       */
+/*   Created: 2022/11/08 16:16:18 by fcoindre          #+#    #+#             */
+/*   Updated: 2022/11/08 16:39:38 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isalnum(int c)
+/*
+t_list *ft_lstnew(void *content)
 {
-	if ((c >= '0' && c <= '9')
-		|| (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z'))
-	{
-		return (1);
-	}
-	return (0);
+
+
+
+
+}*/
+
+int main()
+{
+	t_list element0;
+
+	char caract = 's';
+
+	element0->content = caract;
+	element0->next = NULL;
+
+	pr
+
+	return 0;
 }

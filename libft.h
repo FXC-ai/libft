@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:04:55 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/11/07 17:18:09 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:53:24 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 int		ft_atoi(const char	*str);
 void	*ft_memset(void *b, int c, size_t len);
