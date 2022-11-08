@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:57:21 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/30 17:38:43 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:28:55 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	str = NULL;
 	if (start > ft_strlen(s))
-	{
 		len = 0;
-	}
-
-    if (ft_strlen(s) - start > len)
-	{
+	if (ft_strlen(s) - start > len)
 		str = malloc(sizeof(char) * (len + 1));
-	}
 	else
-	{
 		str = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
-
-	}
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -44,20 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int main()
-{	
-
-	char *str = "lorem ipsum dolor sit amet";
-	unsigned int start = 0;
-	size_t len = 10;
-
-
-	char *result = ft_substr(str, start, len);
-	printf("result = %s\n", result);
-
-	return 0;
-
-}*/

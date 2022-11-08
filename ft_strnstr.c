@@ -6,7 +6,7 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:04:38 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:26:10 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (i < len && haystack[i] != '\0')
 	{
 		if (haystack[i] == needle[0])
-			a = (char*) &haystack[i];
+			a = (char *) &haystack[i];
 		c = 0;
 		while (needle[c] == haystack[i + c] && (i + c) < len)
 		{

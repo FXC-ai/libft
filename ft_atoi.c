@@ -6,17 +6,17 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:53:00 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 18:26:00 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:48:28 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char a);
-int	ft_space_min_finder(const char *str, int *is_negativ);
-int	ft_atoi(const char *str);
+static int	ft_isspace(char a);
+static int	ft_space_min_finder(const char *str, int *is_negativ);
+int			ft_atoi(const char *str);
 
-int	ft_isspace(char a)
+static int	ft_isspace(char a)
 {
 	if (a == ' '
 		|| a == '\f'
@@ -30,7 +30,7 @@ int	ft_isspace(char a)
 	return (0);
 }
 
-int	ft_space_min_finder(const char *str, int *is_negativ)
+static int	ft_space_min_finder(const char *str, int *is_negativ)
 {
 	int	i;
 
@@ -74,5 +74,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * is_negativ);
 }
-
-

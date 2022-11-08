@@ -6,17 +6,17 @@
 /*   By: fcoindre <fcoindre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:09:34 by fcoindre          #+#    #+#             */
-/*   Updated: 2022/10/27 14:30:44 by fcoindre         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:02:03 by fcoindre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    unsigned char	cc;
+	unsigned char	cc;
 
-    cc = (unsigned char)	c;
+	cc = (unsigned char) c;
 	if ((cc >= '0' && cc <= '9')
 		|| (cc >= 'A' && cc <= 'Z')
 		|| (cc >= 'a' && cc <= 'z'))
